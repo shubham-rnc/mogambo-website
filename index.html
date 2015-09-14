@@ -1,0 +1,234 @@
+<html>
+<head>
+<head>
+	<meta charset="UTF-8">
+	<title>Splatter</title>
+   
+	<!-- Style  -->
+	<style type="text/css">
+
+	#parx_lyr_1{
+		position:fixed;
+		background: url(img/mock.png) no-repeat center 365px; 
+		width:100%;
+		height: 820px;
+	}
+
+	#content_layer{ 
+		position:absolute; 
+		background:url(img/bg1.jpg);
+		background-repeat: no-repeat;
+		width:100%;
+		z-index: -10;
+	}
+
+	#features{
+		margin-top: 413px;
+		height: 437px;
+		font-size: 18px;
+		font-family: sans-serif;
+		color: grey;
+		
+	}
+
+	.BeforeScroll
+		{
+		  
+		    opacity: 0; 
+		    
+		  
+		}
+
+	
+
+	#feature1{
+		
+		height: 437px;
+		width: 50%;
+		float: left;
+		text-align: center;
+	}
+
+	#feature11{
+		opacity: 0;
+		padding-top: 14%;
+		display: inline-block;
+		
+		height: 30%;
+		width: 40%;
+
+		
+	}
+
+	#feature12{
+		opacity: 0;
+		padding-top: 0%;
+		display: inline-block;
+		vertical-align: middle;
+		height: 50%;
+		width: 40%;
+	}
+
+	#feature21{
+		opacity: 0;
+		padding-top: 14%;
+		display: inline-block;
+		height: 30%;
+		width: 40%;
+	}
+
+	#feature22{
+		opacity: 0;
+		padding-top: 0%;
+		display: inline-block;
+		height: 50%;
+		width: 40%;
+	}	
+
+
+	#feature2{
+		text-align: center;
+		height: 437px;
+		width: 50%;
+		float: right;
+		}
+
+	#midpink{
+		clear: both;
+		 
+		background-color: #A63F5A;
+		height: 280px;
+		z-index: -1;
+		width: 100%;
+	}
+
+	#update{
+		padding-top: 50px;
+		font-size: 16px;
+		text-align: center;
+		font-family: sans-serif;
+		color: grey;
+	}
+
+	#footer{
+		padding-top: 20px;
+		height: 80px;
+		background-color: #A68D85;
+		opacity: 0.3;
+	}
+
+
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script> 
+
+	<script type = "text/javascript">
+	
+
+	function parallax(){
+		var prlx_lyr_1 = document.getElementById('parx_lyr_1');
+		prlx_lyr_1.style.top = -(window.pageYOffset / 1.65)+'px';
+
+	}
+	window.addEventListener("scroll", parallax, false);
+
+	</script>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script> 
+
+	<script type = "text/javascript">
+	$(document).ready(function() {
+	    $(window).scroll(function(){
+	        $('#feature11').each (function(){ 
+	            var windowpos = $(window).scrollTop();
+				   if (windowpos >= 200) {
+				   	 $(this).animate({'opacity':'1'},500);
+				   }          
+	            });
+
+	       	$('#feature12').each (function(){   
+	            var windowpos = $(window).scrollTop();
+				   if (windowpos >= 300) {
+				   	 $(this).animate({'opacity':'1'},700);
+				   }          
+	            });
+
+	       	$('#feature21').each (function(){   
+	            var windowpos = $(window).scrollTop();
+				   if (windowpos >= 200) {
+				   	 $(this).animate({'opacity':'1'},500);
+				   }          
+	            });
+
+	       	$('#feature22').each (function(){   
+	            var windowpos = $(window).scrollTop();
+				   if (windowpos >= 300) {
+				   	 $(this).animate({'opacity':'1'},700);
+				   }          
+	            });
+
+
+
+	            
+	     }); 
+    
+    });
+    
+
+	</script>
+
+</head>
+
+<body>
+	
+    <div id="parx_lyr_1"> 
+     <center><img src="img/SplatterText_1.png" style="margin-top:20px;"  ></center>
+    </div>
+    
+    <div id="content_layer"> 
+    	 <div id="features">
+    	 	<div id="feature1" >
+	    	 	<p id="feature11" >Explore<br/>
+	    	 	<span style="font-size:13px">Browse through cuisines shared by food lovers in your town and more.</span>
+	    	 	</p></br>
+	    	 	<p id="feature12">Connect</br>
+	    	 	<span style="font-size:13px">Connect and follow foodies around the world.</span>
+	    	 	</p>
+    	 	</div>
+    	 	<div id="feature2">
+    	 		<p id="feature21">Share</br>
+    	 		<span style="font-size:13px">Share the great food you just ate or cooked with the world.</span>
+    	 		</p></br>
+
+	    	 	<p id="feature22">Nearby</br>
+	    	 	<span style="font-size:13px">Use your mobile location to discover great food nearby.</span>
+	    	 	</p>
+    	 	</div>
+    	 </div>
+    
+	    <div id="midpink">
+
+	    	<img src="img/strip.jpg" style="margin-top:100px;width:100%">
+
+	    </div>
+
+	    <div id="update">
+	    <span style="font-size:18px;">SIGN UP AND RECEIVE UPDATES</span>
+	    </br>
+	    <span style="font-size:11px;">We are building the app and we would love if you can signup here to become one of our first users.</span>
+
+		    <form style="padding-top:10px">
+		    	<input type="text" name="email" style="width:250px;"><button type="submit"  value="Submit">Submit</button>
+		    </form>
+
+ 		</br>
+	    <b style="color:black;line-height:28px;">Say Hi & get in touch</b></br>
+	    <a href="https://www.facebook.com/splatterforfoodies?fref=ts" target="_blank"><img src="img/facebook.png" ></a> <a href="#" target="_blank"><img src="img/pinterest.png"></a>
+	    </br></br>
+	    </div>
+
+	    <div id="footer">
+	    </div>
+    </div>
+
+</body>
