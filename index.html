@@ -16,7 +16,8 @@
 
 	#content_layer{ 
 		position:absolute; 
-		background:url(img/bg1.jpg);
+		background:url(img/bg3.jpg);
+		background-size: 100%;
 		background-repeat: no-repeat;
 		width:100%;
 		z-index: -10;
@@ -127,7 +128,7 @@
 
 	function parallax(){
 		var prlx_lyr_1 = document.getElementById('parx_lyr_1');
-		prlx_lyr_1.style.top = -(window.pageYOffset / 1.65)+'px';
+		prlx_lyr_1.style.top = -(window.pageYOffset / 1.58)+'px';
 
 	}
 	window.addEventListener("scroll", parallax, false);
@@ -141,28 +142,28 @@
 	    $(window).scroll(function(){
 	        $('#feature11').each (function(){ 
 	            var windowpos = $(window).scrollTop();
-				   if (windowpos >= 200) {
+				   if (windowpos >= 100) {
 				   	 $(this).animate({'opacity':'1'},500);
 				   }          
 	            });
 
 	       	$('#feature12').each (function(){   
 	            var windowpos = $(window).scrollTop();
-				   if (windowpos >= 300) {
+				   if (windowpos >= 250) {
 				   	 $(this).animate({'opacity':'1'},700);
 				   }          
 	            });
 
 	       	$('#feature21').each (function(){   
 	            var windowpos = $(window).scrollTop();
-				   if (windowpos >= 200) {
+				   if (windowpos >= 100) {
 				   	 $(this).animate({'opacity':'1'},500);
 				   }          
 	            });
 
 	       	$('#feature22').each (function(){   
 	            var windowpos = $(window).scrollTop();
-				   if (windowpos >= 300) {
+				   if (windowpos >= 250) {
 				   	 $(this).animate({'opacity':'1'},700);
 				   }          
 	            });
@@ -182,7 +183,7 @@
 <body>
 	
     <div id="parx_lyr_1"> 
-     <center><img src="img/SplatterText_1.png" style="margin-top:20px;"  ></center>
+     
     </div>
     
     <div id="content_layer"> 
@@ -215,7 +216,7 @@
 	    <div id="update">
 	    <span style="font-size:18px;">SIGN UP AND RECEIVE UPDATES</span>
 	    </br>
-	    <span style="font-size:11px;">We are building the app and we would love if you can signup here to become one of our first users.</span>
+	    <span style="font-size:11px;">We are currently building the app and we would love if you can signup here to become one of our very first users.</span>
 
 		    <form style="padding-top:10px">
 		    	<input type="text" name="email" style="width:250px;"><button type="submit"  value="Submit">Submit</button>
