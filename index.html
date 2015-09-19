@@ -3,8 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Splatter</title>
-   
+   <link rel="shortcut icon" href="img/icon.png">
 	<!-- Style  -->
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 	<style type="text/css">
 
 	#parx_lyr_1{
@@ -16,15 +18,15 @@
 
 	#content_layer{ 
 		position:absolute; 
-		background:url(img/bg3.jpg);
-		background-size: 100%;
+		background:url(img/bg2.jpg);
+		background-size: 100% 413px ;
 		background-repeat: no-repeat;
 		width:100%;
 		z-index: -10;
 	}
 
 	#features{
-		margin-top: 413px;
+		margin-top: -115px;
 		height: 437px;
 		font-size: 18px;
 		font-family: sans-serif;
@@ -34,16 +36,10 @@
 
 	.BeforeScroll
 		{
-		  
 		    opacity: 0; 
-		    
-		  
 		}
 
-	
-
 	#feature1{
-		
 		height: 437px;
 		width: 50%;
 		float: left;
@@ -54,11 +50,8 @@
 		opacity: 0;
 		padding-top: 14%;
 		display: inline-block;
-		
 		height: 30%;
-		width: 40%;
-
-		
+		width: 40%;	
 	}
 
 	#feature12{
@@ -118,6 +111,17 @@
 		opacity: 0.3;
 	}
 
+	#head{
+		z-index: 10;
+		height: 413px;
+		margin-top: 0px;
+		padding-top: 100px;
+		font-family: 'Muli', sans-serif;
+		color:white;font-size:20px;
+		
+		margin-top:0px
+
+	}
 
 	</style>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -157,7 +161,9 @@
 	       	$('#feature21').each (function(){   
 	            var windowpos = $(window).scrollTop();
 				   if (windowpos >= 100) {
+
 				   	 $(this).animate({'opacity':'1'},500);
+
 				   }          
 	            });
 
@@ -166,15 +172,34 @@
 				   if (windowpos >= 250) {
 				   	 $(this).animate({'opacity':'1'},700);
 				   }          
-	            });
-
-
-
-	            
+	            });      
 	     }); 
     
     });
-    
+	
+	function emailsubmit(){
+	    var email = $("#email").val()
+	    
+	    if(email)
+
+	    $.ajax({
+			    type: "POST",
+			    url: "http://52.3.131.55:39112/request",
+			    // The key needs to match your method's input parameter (case-sensitive).
+			    data: email,
+			    contentType: "application/json",
+			    dataType: "json",
+			    success: function(){
+			    	document.getElementById("mailboxreponse").innerHTML = "<span style='font-size:12px'>Thanks, we will be in touch.</span>";
+			    },
+			    error: function(){
+			    	document.getElementById("mailboxreponse").innerHTML = "<span style='font-size:12px'>Something is not right, please try again.</span>";
+			    }
+
+			});
+
+	       
+	    }
 
 	</script>
 
@@ -183,10 +208,15 @@
 <body>
 	
     <div id="parx_lyr_1"> 
-     
+    
     </div>
     
-    <div id="content_layer"> 
+    <div id="content_layer">
+    <div id="head"><center>
+    Share your love of food on<br/>
+    <span style="font-size:120px;text-shadow:0.5px 0.5px GREY">splatter</span><br/>
+    Coming soon 
+    </center></div> 
     	 <div id="features">
     	 	<div id="feature1" >
 	    	 	<p id="feature11" >Explore<br/>
@@ -209,7 +239,7 @@
     
 	    <div id="midpink">
 
-	    	<img src="img/strip.jpg" style="margin-top:100px;width:100%">
+	    	<img src="img/strip.jpg" style="margin-top:120px;width:50%"><img src="img/strip.jpg" style="margin-top:100px;width:50%">
 
 	    </div>
 
@@ -218,11 +248,11 @@
 	    </br>
 	    <span style="font-size:11px;">We are currently building the app and we would love if you can signup here to become one of our very first users.</span>
 
-		    <form style="padding-top:10px">
-		    	<input type="text" name="email" style="width:250px;"><button type="submit"  value="Submit">Submit</button>
-		    </form>
-
- 		</br>
+		    <div style="padding-top:10px" id="mailbox">
+		    	<input type="text" id="email" name="email" style="width:250px;"><button  onclick="emailsubmit()" id="submit" type="submit"  value="Submit">Submit</button>
+		    </div>
+		    <div style="min-height:20px;padding-top:4px" id="mailboxreponse"></div>
+ 		
 	    <b style="color:black;line-height:28px;">Say Hi & get in touch</b></br>
 	    <a href="https://www.facebook.com/splatterforfoodies?fref=ts" target="_blank"><img src="img/facebook.png" ></a> <a href="#" target="_blank"><img src="img/pinterest.png"></a>
 	    </br></br>
