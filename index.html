@@ -7,18 +7,21 @@
 	<!-- Style  -->
 	<link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
 	<style type="text/css">
 
 	#parx_lyr_1{
 		position:fixed;
-		background: url(img/mock.png) no-repeat center 365px; 
+		background: url(img/appscreen.png) no-repeat center 365px; 
+		background-size: 250px 457px;
 		width:100%;
-		height: 820px;
+		height: 1500px;
 	}
 
 	#content_layer{ 
 		position:absolute; 
-		background:url(img/bg2.jpg);
+		background:url(img/bg11.jpg)  ;
+		box-shadow: 10px 10px 5px #ccc;
 		background-size: 100% 413px ;
 		background-repeat: no-repeat;
 		width:100%;
@@ -29,7 +32,7 @@
 		margin-top: -115px;
 		height: 437px;
 		font-size: 18px;
-		font-family: sans-serif;
+		font-family: 'Quicksand',sans-serif;
 		color: grey;
 	}
 
@@ -40,9 +43,13 @@
 
 	#feature1{
 		height: 437px;
-		width: 50%;
+		width: 40%;
 		float: left;
-		text-align: center;
+		text-align: right;
+	}
+
+	#featuremid{
+		width: 20%
 	}
 
 	#feature11{
@@ -50,7 +57,7 @@
 		padding-top: 14%;
 		display: inline-block;
 		height: 30%;
-		width: 40%;	
+		width: 45%;	
 	}
 
 	#feature12{
@@ -59,7 +66,7 @@
 		display: inline-block;
 		vertical-align: middle;
 		height: 50%;
-		width: 40%;
+		width: 55%;
 	}
 
 	#feature21{
@@ -67,7 +74,7 @@
 		padding-top: 14%;
 		display: inline-block;
 		height: 30%;
-		width: 40%;
+		width: 42%;
 	}
 
 	#feature22{
@@ -75,14 +82,15 @@
 		padding-top: 0%;
 		display: inline-block;
 		height: 50%;
-		width: 40%;
+		width: 48%;
 	}	
 
 
 	#feature2{
-		text-align: center;
+		text-align: left;
+
 		height: 437px;
-		width: 50%;
+		width: 40%;
 		float: right;
 		}
 
@@ -115,9 +123,10 @@
 		height: 413px;
 		margin-top: 0px;
 		padding-top: 100px;
-		font-family: 'Muli', sans-serif;
+		font-family: 'Quicksand', sans-serif;
 		color:white;font-size:20px;
-		margin-top:0px
+		margin-top:0px;
+		text-shadow:0.8px 0.8px GREY
 	}
 
 	</style>
@@ -139,7 +148,7 @@
 
 	function parallax(){
 		var prlx_lyr_1 = document.getElementById('parx_lyr_1');
-		prlx_lyr_1.style.top = -(window.pageYOffset / 1.58)+'px';
+		prlx_lyr_1.style.top = -(window.pageYOffset / 1.55)+'px';
 
 	}
 	window.addEventListener("scroll", parallax, false);
@@ -198,6 +207,9 @@
 			    dataType: "json",
 			    success: function(){
 			    	document.getElementById("mailboxreponse").innerHTML = "<span style='font-size:12px'>Thanks, we will be in touch.</span>";
+			    	document.getElementById("email").value = " ";
+			    	
+
 			    },
 			    error: function(){
 			    	document.getElementById("mailboxreponse").innerHTML = "<span style='font-size:12px'>Something is not right, please try again.</span>";
@@ -212,34 +224,36 @@
 
 </head>
 
-<body>
+<body >
 	
-    <div id="parx_lyr_1"> 
+    <div id="parx_lyr_1" > 
     
     </div>
     
     <div id="content_layer">
     <div id="head"><center>
     Share your love of food on<br/>
-    <span style="font-size:120px;text-shadow:0.5px 0.5px GREY">splatter</span><br/>
+    <span style="font-size:120px;text-shadow:0.8px 0.8px GREY">splatter</span><br/>
     Coming soon 
     </center></div> 
     	 <div id="features">
     	 	<div id="feature1" >
-	    	 	<p id="feature11" >Explore<br/>
-	    	 	<span style="font-size:13px">Browse through cuisines shared by food lovers in your town and more.</span>
+	    	 	<p id="feature11" ><span style="color:#A63F5A;font-weight:700">Write</span><br/>
+	    	 	<span style="font-size:13px">Talk about food. Learn as you write about food with our app, become a food connoisseur</span>
 	    	 	</p></br>
-	    	 	<p id="feature12">Connect</br>
-	    	 	<span style="font-size:13px">Connect and follow foodies around the world.</span>
+	    	 	<p id="feature12"><span style="color:#A63F5A;font-weight:700">Share</span></br>
+	    	 	<span style="font-size:13px">Socialize with friends and foodies over your favourite dishes, be it restaurants, street-food or home-made delicacies</span>
 	    	 	</p>
     	 	</div>
+    	 	<div id="featuremid">
+    	 	</div>
     	 	<div id="feature2">
-    	 		<p id="feature21">Share</br>
-    	 		<span style="font-size:13px">Share the great food you just ate or cooked with the world.</span>
+    	 		<p id="feature21"><span style="color:#A63F5A;font-weight:700">Indulge</span></br>
+    	 		<span style="font-size:13px">Satiate your appetite by flicking through personalized streams of food photos</span>
     	 		</p></br>
 
-	    	 	<p id="feature22">Nearby</br>
-	    	 	<span style="font-size:13px">Use your mobile location to discover great food nearby.</span>
+	    	 	<p id="feature22"><span style="color:#A63F5A;font-weight:700">Discover</span></br>
+	    	 	<span style="font-size:13px">Find what’s cooking nearby with the help of top results from fellow food experts and enthusiasts</span>
 	    	 	</p>
     	 	</div>
     	 </div>
@@ -251,16 +265,16 @@
 	    </div>
 
 	    <div id="update">
-	    <span style="font-size:18px;">SIGN UP AND RECEIVE UPDATES</span>
+	    <span style="font-size:18px;font-family:'Quicksand';color:#A63F5A;font-weight:700">SIGN UP AND RECEIVE UPDATES</span>
 	    </br>
-	    <span style="font-size:11px;">We are currently building the app and we would love if you can signup here to become one of our very first users.</span>
+	    <span style="font-size:13px;font-family:'Quicksand'">We are currently building the app and we would love if you can signup<br/> here to become one of our very first users.</span>
 
 		    <div style="padding-top:10px" id="mailbox">
 		    	<input type="text" id="email" name="email" style="width:250px;"><button  onclick="emailsubmit()" id="submit" type="submit"  value="Submit">Submit</button>
 		    </div>
 		    <div style="min-height:20px;padding-top:4px" id="mailboxreponse"></div>
  		
-	    <b style="color:black;line-height:28px;">Say Hi & get in touch</b></br>
+	    <b style="color:black;line-height:28px;font-family:'Quicksand'">Say Hi & get in touch</b></br>
 	    <a href="https://www.facebook.com/splatterforfoodies?fref=ts" target="_blank"><img src="img/facebook.png" ></a> <a href="#" target="_blank"><img src="img/pinterest.png"></a>
 	    </br></br>
 	    </div>
